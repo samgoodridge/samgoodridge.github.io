@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<head>
+   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Rokugo</title>
+   <link rel="stylesheet" href="/project.css">
+</head>
+<body>
+   <div id="navbar"></div>
+   
+   <div class="container">
+
+      <div class="aspect-box">
+         <game-port></game-port>
+      </div>
+   
+      <div class="desc">
+         <h1>rokugo 六五</h1>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates perspiciatis veritatis placeat, cupiditate nesciunt dolore accusamus. Autem sed vitae debitis nisi magnam at labore itaque nobis! A voluptas dolore dignissimos.</p>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates perspiciatis veritatis placeat, cupiditate nesciunt dolore accusamus. Autem sed vitae debitis nisi magnam at labore itaque nobis! A voluptas dolore dignissimos.</p>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates perspiciatis veritatis placeat, cupiditate nesciunt dolore accusamus. Autem sed vitae debitis nisi magnam at labore itaque nobis! A voluptas dolore dignissimos.</p>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates perspiciatis veritatis placeat, cupiditate nesciunt dolore accusamus. Autem sed vitae debitis nisi magnam at labore itaque nobis! A voluptas dolore dignissimos.</p>
+      </div>
+   
+   </div>
+
+  
+
+   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+   <script> $(function() { $("#navbar").load("/comp/navbar/navbar.html"); }); </script>
+
+   <script type="module">
+      import '/comp/gameport/gameport.js';
+   
+      // note: currently needs this here - TODO do with html attrib
+      const gameport = document.querySelector('game-port');
+      gameport.app = "/wasm/rokugo/index.html";
+   </script>
+
+</body>

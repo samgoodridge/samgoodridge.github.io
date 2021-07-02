@@ -1,0 +1,44 @@
+.navbar {
+   background-color: hotpink;
+   padding: 0.5em 2em;
+   overflow: hidden;
+   font-size: 16px;
+   
+}
+
+.navbar .container {
+   max-width: 1280px;
+   margin: 0 auto;
+}
+
+#title {
+   float: left;
+   color: white !important;
+}
+
+#title:hover {
+   font-weight: 500;
+}
+
+#primary-nav {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   border: 0;
+   margin: 0;
+   float: right;
+}
+
+#primary-nav li {
+   padding: 0 0.6em;
+   color: white !important;
+}
+
+#primary-nav li:hover {
+   cursor: default;
+}
+
+#primary-nav li a:hover {
+   font-weight: 500;
+   cursor: pointer;
+}

@@ -1,0 +1,120 @@
+/* default is desktop */
+* {
+   margin: auto;
+   padding: 0;
+}
+
+iframe {
+   border-style: none;
+}
+
+#gameport {
+   background-color: transparent;
+   position: relative;
+   top: 0; right: 0; bottom: 0; left: 0;
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+
+/* aspect ratio trickery for safari */
+.aspectRatioBox {
+   height: 100%;
+   width: 100%;
+   padding: 0;
+   overflow: hidden;
+   position: relative;
+}
+.aspectRatioBox #app {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+
+
+#gamepad {
+   display: none;
+   border-style: none;
+   width: 100%;
+   height: 260px;
+   top: 0;
+   bottom: 0;
+}
+
+#fullscreenIcon {
+   display: none; 
+   position: absolute;
+   right:  5%;
+   bottom: 5%;
+   width: 15%;
+   height: 15%;
+   /* -webkit-transform: translate(-50%, -50%);
+           transform: translate(-50%, -50%); */
+}
+
+/* doesn't quite work right */
+.aspectRatioBox:hover > #fullscreenIcon {
+   display: block;
+   cursor: pointer;
+}
+
+
+#backButton {
+   display: none;
+   position: absolute;
+   left: 30px;
+   bottom: 25px;
+   width: 0;
+   height: 0;
+   border-right: 15px solid transparent;
+   border-top:   20px solid rgb(90, 90, 90);
+   border-left:  15px solid transparent;
+}
+
+
+
+
+/* phone & tablet */
+@media screen and (max-width: 1200px) {
+   #fullscreenIcon { display: block; }
+}
+
+/* landscape mode, move touch controls to side */
+@media screen and (orientation: landscape) {
+   .container { display: flex; }
+   #gamepad { 
+      position: absolute; 
+      left: 0; right: 0; 
+      top: 30%; bottom: 0; 
+      -webkit-transform: translate(0, -30%);
+              transform: translate(0, -30%);
+   }
+   .aspectRatioBox { height: 100%; width: 100%; padding: 0; }
+}
+
+
+
+
+/* new fullscreen method */
+#gameport.fullscreen {
+   position: fixed;
+   left: 0; right: 0;
+   top: 0; bottom: 0;
+   z-index: 1000;
+}
+
+
+#gameport.fullscreen #backButton     { display: block; }
+#gameport.fullscreen #fullscreenIcon { display: none;  }
+
+
+@media screen and (max-width: 1200px) {
+   #gameport.fullscreen > .aspectRatioBox { height: 0; padding-top: 75%; }
+   #gameport.fullscreen #gamepad        { display: block; }
+}
+
+@media screen and (orientation: landscape) {
+   #gameport.fullscreen > .aspectRatioBox { height: 100%; width: 100%; padding: 0; }
+}

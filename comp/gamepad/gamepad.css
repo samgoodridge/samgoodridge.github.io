@@ -1,0 +1,142 @@
+.gamepad {
+   --btnCol: hotpink;
+   --btnColNorth: rgb(79, 149, 255); 
+   --btnColSouth: rgb(247, 216, 43); 
+   --btnColWest:  rgb(96, 211, 144);
+   --btnColEast:  rgb(253, 76, 76); 
+   --btnSize: 50px;
+   --dpadRadius: 7px;
+   --anchorOffset: 60%;
+   --sideWidth: 200px;
+   --sideMargin: 5px;
+}
+
+* {
+   margin: auto;
+   padding: 0;
+   box-sizing: border-box;
+
+   /* No select */
+   -webkit-touch-callout: none;
+     -webkit-user-select: none;
+        -moz-user-select: none;
+             user-select: none;
+}
+ 
+.gamepad {
+   margin: 0;
+   padding: 0;
+   height: 260px;
+   width: 100%;
+   position: relative;
+}
+
+.gamepadLeft {
+   height: 100%;
+   width: calc(var(--btnSize) * 3);
+   left: 0;
+   margin-left: var(--sideMargin);
+   position: absolute;
+}
+
+.gamepadRight {
+   height: 100%;
+   width: calc(var(--btnSize) * 3);
+   position: absolute;
+   right: 0;
+   margin-right: var(--sideMargin);
+}
+
+.touchpad {
+   position: absolute;
+   outline-width: 1px;
+   width:  calc(var(--btnSize) * 3);
+   height: calc(var(--btnSize) * 3);
+   left: 50%;
+   top: var(--anchorOffset);
+   -webkit-transform: translate(-50%, -50%);
+           transform: translate(-50%, -50%);
+}
+
+.dpadAnchor {
+   background-color: var(--btnCol);
+   width: var(--btnSize);
+   height: var(--btnSize);
+   left: 50%;
+   top: var(--anchorOffset);
+   -webkit-transform: translate(-50%, -50%);
+           transform: translate(-50%, -50%);
+   position: absolute;
+}
+
+.dpad {
+   background-color: var(--btnCol);
+   width:  var(--btnSize);
+   height: var(--btnSize);
+   position: absolute;
+   border-radius: var(--dpadRadius);
+}
+
+.dpad.up    { margin-top:  calc(0px - (var(--btnSize) - var(--dpadRadius))); }
+.dpad.down  { margin-top:  calc(      (var(--btnSize) - var(--dpadRadius))); }
+.dpad.left  { margin-left: calc(0px - (var(--btnSize) - var(--dpadRadius))); }
+.dpad.right { margin-left: calc(      (var(--btnSize) - var(--dpadRadius))); }
+
+
+.dpad.pressed {
+   background-color: transparent;
+   border-style: solid;
+   border-color: var(--btnCol);
+   border-width: 5px;
+}
+
+.buttonAnchor {
+   width: var(--btnSize);
+   height: var(--btnSize);
+   left: 50%;
+   top: var(--anchorOffset);
+   -webkit-transform: translate(-50%, -50%);
+           transform: translate(-50%, -50%);
+   position: absolute;
+}
+
+.button {
+   position: absolute;
+   width:  var(--btnSize);
+   height: var(--btnSize);
+   border-radius: 100%;
+   border-color: var(--btnCol);
+   border-style: solid;
+   border-width: 5px;
+   background-color: none;
+}
+
+.button.north { margin-top:  calc(0px - (var(--btnSize) - 4px)); border-color: var(--btnColNorth) }
+.button.south { margin-top:  calc(       var(--btnSize) - 4px);  border-color: var(--btnColSouth) }
+.button.west  { margin-left: calc(0px - (var(--btnSize) - 4px)); border-color: var(--btnColWest)  }
+.button.east  { margin-left: calc(       var(--btnSize) - 4px);  border-color: var(--btnColEast)  }
+
+.button.north.pressed { background-color: var(--btnColNorth); }
+.button.south.pressed { background-color: var(--btnColSouth); }
+.button.west.pressed  { background-color: var(--btnColWest);  }
+.button.east.pressed  { background-color: var(--btnColEast);  }
+
+.menuButton {
+   position: absolute;
+   width: var(--btnSize);
+   height: 20px;
+   background-color: var(--btnCol);
+   border-radius: 10px;
+   top: 20px;
+   border-color: var(--btnCol);
+   border-width: 5px;
+   border-style: none;
+}
+
+.menuButton.left  { left:  10px; }
+.menuButton.right { right: 10px; }
+
+.menuButton.pressed {
+   background-color: transparent;
+   border-style: solid;
+}
