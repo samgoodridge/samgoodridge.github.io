@@ -20,10 +20,15 @@
    
       <div class="desc">
          <h1>sandy サンディー</h1>
-         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates perspiciatis veritatis placeat, cupiditate nesciunt dolore accusamus. Autem sed vitae debitis nisi magnam at labore itaque nobis! A voluptas dolore dignissimos.</p>
-         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates perspiciatis veritatis placeat, cupiditate nesciunt dolore accusamus. Autem sed vitae debitis nisi magnam at labore itaque nobis! A voluptas dolore dignissimos.</p>
-         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates perspiciatis veritatis placeat, cupiditate nesciunt dolore accusamus. Autem sed vitae debitis nisi magnam at labore itaque nobis! A voluptas dolore dignissimos.</p>
-         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates perspiciatis veritatis placeat, cupiditate nesciunt dolore accusamus. Autem sed vitae debitis nisi magnam at labore itaque nobis! A voluptas dolore dignissimos.</p>
+         <p>Sandy is a 3D renderer built from scratch in C, compiling direct to WebAssembly.</p>
+         <p>I place individual pixels on a framebuffer which is sent to Javascript for blitting to the web canvas</p>
+         <p>This project was mainly a way for me to refresh my skills in C++/C as it still seems so prevalent in the games industry.</p>
+         <p>I initially wrote it completely in C++, linking to my Rust Vulkan and WebGl engine.</p>
+         <p>After figuring out how to compile directly to WebAssembly I ended up switching to C, as I felt it fit the low-level, no_std style better.</p>
+         <p>The demo above is currently rendering the Spyro Artisans homeworld as a test</p>
+         <p>When I revisit this project I aim to programatically place and generate meshes</p>
+         <p>Coupling that with a tile map for easy level sketching I think I could create a cool top-down 3D rpg or something</p>
+         <p>UV mapped textures are working correctly (and did in the C++ version of this project), however my obj loader currently messes up the UVs</p>
       </div>
    </div>
    

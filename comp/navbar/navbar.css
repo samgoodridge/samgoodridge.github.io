@@ -42,3 +42,16 @@
    font-weight: 500;
    cursor: pointer;
 }
+
+@media screen and (max-width: 900px) and (orientation: portrait) {
+   #title { 
+      display: block; 
+      width: 100%; 
+      text-align: center; 
+      height: 2.5em;
+   }
+   #primary-nav { 
+      width: 100%; 
+      justify-content: space-around;
+   }
+}
