@@ -17,7 +17,7 @@ const wasmImports = {
    },
 };
 
-let pixel_perfect = true; // because of dithering
+let pixel_perfect = false;
 
 let key_map = new Map(); // store against our enum
 
