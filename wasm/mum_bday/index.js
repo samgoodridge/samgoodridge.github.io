@@ -2,8 +2,9 @@
 
 const pixel_width   = 240;
 const pixel_height  = 160;
-const canvas_width  = pixel_width;
-const canvas_height = pixel_height;
+
+const canvas_width  = 256;
+const canvas_height = 192;
 
 const pixel_perfect = false;
 
