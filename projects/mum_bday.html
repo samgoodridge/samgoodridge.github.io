@@ -1,104 +1,50 @@
 <!DOCTYPE html>
 <!-- <html lang="en"> -->
 <head>
-   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Sozo</title>
-   <link rel="stylesheet" href="/project.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sozo</title>
+    <link rel="stylesheet" href="/project.css">
 </head>
 
 <body>
-   
-   <div id="navbar"></div>
-   
-   <div class="container">
+    <div id="navbar"></div>
 
-      <div class="aspect-box">
-         <game-port></game-port>
-      </div>
-   
-      <div class="desc">
-         <h1>sozocon - platformer demo</h1>
+    <div class="container">
 
-         <h2>controls</h2>
-         <p>wasd to move, k to jump, j to attack</p>
-         <p>or use the gameboy style touch controls on mobile</p>
+        <div class="aspect-box">
 
-         <h2>summary</h2>
-         <p>Written in Rust (but easily could be translated to C/C++). The demo above is compiled directly to WebAssembly and links to Javascript WebAPI to access system graphics and sound</p>
-         <p>The native version uses Vulkan for graphics, Winit for windowing & input and cpal for low-level audio.</p>
-         <p>The main engine is a fantasy game console with a 64k address space. Text mode PPU for graphics</p>
-         <p>Aiming for a cross between Pico-8 and real 8-bit consoles</p>
-         
+            <game-port></game-port>
 
-         <p>While I'm developing this I'd like to write explanations for each part of my process and each system in the game</p>
-         
-         <h2>explanation</h2>
-         <p>I'm programming this in a way that will be easiest to port to real 8 bit consoles like the NES, once I get my head around programming workflow in assembly</p>
-         <p>The beginnings of a cross-platform fantasy game console / computer built in Rust.</p>
-         <p>I'm developing a platformer and considering the tools & systems needed to produce it</p>
-         
-         <h2>map system</h2>
-         <p>Ascii map system - just using ascii strings - super easy to edit and recompile</p>
-         <p>This is the level data for the first test level. Each character corresponds to a level id 0-256.</p>
-         <p>
-               ################################<br>
-               ######.......................###<br>
-               #.....................$$.......#<br>
-               #..................---#####H####<br>
-               #...................$......H....<br>
-               #---..............$.--.....H....<br>
-               #........#........---......H..##<br>
-               #......##......$$$.........H..##<br>
-               #..............---............##<br>
-               #.............................##<br>
-               #####..####---.........--H######<br>
-               #####^^####..............H######<br>
-               ########..........#......H######<br>
-               ########.................H######<br>
-               ########.................H######<br>
-               ############^^^^################<br></p>
+        </div>
 
-         <p>These blocks can be pasted into individual parts of the map, and programatically edited whenever </p>
-         
-         <h2>physics system</h2>
-         <p>Platformer physics</p>
-         <p>Working towards removing all reliance on floating point - just having some rounding trouble with fixed point multiplication atm</p>
-         
-         <h2>entity system</h2>
-         
-         <h2>event / decoupling system</h2>
-         <p>instead of having a bunch of calls to the audio system or animation system strewn throughout the physics system- each system can emit events that are recorded centrally</p>
-         <p>the other systems can observe these events and respond accordingly</p>
-         <p>at the moment this is literally implemented using bitflags - once I need more details per event I'll add a little event queue sys</p>
+        <div class="desc">
 
+            <h1>Happy Birthday!</h1>
 
-         <h2>game ideas</h2>
+            <h2>controls</h2>
+            <p>wasd to move, k to jump</p>
+            <p>or use the gameboy style touch controls on mobile</p>
 
-         <p>My aim is to create a procedurally generated fantasy world the player can explore.</p>         
-         <p>Taking inspiration from classic roguelikes like Nethack, Caves of Qud, </p>
-         <p>I've been inspired by games like Spelunky, </p>
-         <p>The responsiveness of Celeste...</p>
-         <p>still a long way to go</p>
-      </div>
-      
-   
-   </div>
-  
+        </div>
 
-   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-   <script> $(function() { $("#navbar").load("/comp/navbar/navbar.html"); }); </script>
+    </div>
 
-   
-   <script type="module">
-      import '/comp/gameport/gameport.js';
-   
-      // note: currently needs this here - TODO do with html attrib
-      const gameport = document.querySelector('game-port');
-      gameport.app = "/wasm/sozo_plat/index.html";
-   </script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <script> $(function() { $("#navbar").load("/comp/navbar/navbar.html"); }); </script>
+    
+    <script type="module">
+
+        import '/comp/gameport/gameport.js';
+    
+        // note: currently needs this here - TODO do with html attrib
+        const gameport = document.querySelector('game-port');
+        gameport.app = "/wasm/mum_bday/index.html";
+
+    </script>
 </body>
 
 
