@@ -5,6 +5,7 @@ const pixel_height  = 160;
 const canvas_width  = pixel_width;
 const canvas_height = pixel_height;
 
+const pixel_perfect = false;
 
 let wasmApp;
 
@@ -230,7 +231,7 @@ function on_keyup(e)   { button_states &= ~btnKeyMapping[e.code]; }
 
 // ==== RESIZE ====
 
-const pixel_perfect = true;
+
 
 function calc_canvas_size(win_size, img_size, pixel_perfect) {
     let scale = Math.min(win_size[0] / img_size[0], win_size[1] / img_size[1]); 

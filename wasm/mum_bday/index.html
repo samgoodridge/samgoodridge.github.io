@@ -8,19 +8,7 @@
       <title>Wasm Fun!</title>
       <script type="module" src="index.js"></script>
    </head>
-   <body style="background-color: #545454; margin: 0; overflow: hidden;">
+   <body style="background-color: transparent; margin: 0; overflow: hidden;">
       <canvas id="canvas"></canvas>
    </body>
 </html>
-
-<!-- <!DOCTYPE html>
-
-<script type="module">
-   async function init() {
-      const { instance } = await WebAssembly.instantiateStreaming(
-         fetch("./app.wasm")
-      );
-      console.log(instance.exports.add_in_c(43, 2));
-   }
-   init();
-</script> -->
